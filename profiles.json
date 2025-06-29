@@ -1,0 +1,39 @@
+{
+    "profiles": [
+        {
+            "name": "justdial",
+            "baseUrl": "https://www.justdial.com/",
+            "querySelectors": {
+                "listing": "div.resultbox",
+                "parser": {
+                    "name": {
+                        "main": "h3.resultbox_title_anchor",
+                        "fallback": "h2",
+                        "default": ""
+                    },
+                    "location": {
+                        "main": "ul.resultbox_address .locatcity",
+                        "fallback": null,
+                        "default": "Unknown"
+                    },
+                    "rating": {
+                        "main": "li.resultbox_totalrate",
+                        "fallback": null,
+                        "default": ""
+                    },
+                    "phone": {
+                        "main": "span.callcontent",
+                        "fallback": null,
+                        "default": "Hidden/Unavailable"
+                    },
+                    "url": {
+                        "main": "a.slideshow-listing-card",
+                        "fallback": null,
+                        "default": ""
+                    }
+                }
+            },
+            "nextScript": "window.scrollBy(0, window.innerHeight / 2);"
+        }
+    ]
+}

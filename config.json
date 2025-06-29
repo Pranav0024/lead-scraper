@@ -1,0 +1,36 @@
+{
+    "config": {
+        "constants": {
+            "listingThreshold": 30,
+            "regionEnum": [
+                "delhi",
+                "gurgaon",
+                "noida",
+                "ghaziabad",
+                "faridabad"
+            ]
+        },
+        "exports": {
+            "toExcel": true,
+            "toCSV": true
+        },
+        "cleaner": {
+            "merged_file_name": "merged.xlsx",
+            "regex_map": {
+                "name": "^[\\x00-\\x7F]+$",
+                "mobile": "^0\\d{10}$",
+                "URL": "^https:\\/\\/[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,}([\\/\\w\\-\\.\\?\\=\\&\\%]*)?$"
+            },
+            "logs": {
+                "prefix": "cleaner-log",
+                "ext": "log"
+            }
+        },
+        "directories": {
+            "excel": "./xl_data",
+            "res": "./results",
+            "logs": "./logs",
+            "profiles": "./profiles"
+        }
+    }
+}
